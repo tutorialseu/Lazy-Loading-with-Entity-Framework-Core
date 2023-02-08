@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  mssql:
+    image: 'mcr.microsoft.com/mssql/server'
+    user: root # For linux
+    ports:
+        - '1433:1433'
+    environment:
+        ACCEPT_EULA: 'Y'
+        SA_PASSWORD: '1234!Secret'
+        MSSQL_SA_PASSWORD: '1234!Secret'
+    volumes:
+        - './db:/var/opt/mssql'
